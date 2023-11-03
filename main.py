@@ -68,8 +68,8 @@ if args.num_classes == 10:
     train_set = datasets.CIFAR10(args.data_path, train=True)
     test_set = datasets.CIFAR10(args.data_path, train=False)
 else:
-    train_set = datasets.CIFAR100(args.data_path, train=True)
-    test_set = datasets.CIFAR100(args.data_path, train=False)
+    train_set = datasets.CIFAR100(args.data_path, train=True, download=True)
+    test_set = datasets.CIFAR100(args.data_path, train=False, download=True)
 train_set.transform = transforms.Compose([
     transforms.Pad(4),
     transforms.RandomCrop(32),
